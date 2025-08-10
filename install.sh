@@ -1,7 +1,6 @@
 #!/bin/bash
-efi_plaftorm=$(</sys/firmware/efi/fw_platform_size)
+efi_platform=$(</sys/firmware/efi/fw_platform_size)
 
-pacman-key --init
 pacman -Sy jq ansible
 
 set -e
