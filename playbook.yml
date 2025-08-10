@@ -1,10 +1,11 @@
 - name: Test
   hosts: localhost
+  vars_prompt:
+   - name: target_disk
+     prompt: "Enter disk to partition."
+     private: no
   tasks:
-   - name: print test
-     ansible.builtin.shell: cfdisk
-     register: test_output
-
-   - name: show test
-     ansible.builtin.debug:
-       var: test_output
+   - name: test
+     debug:
+       msg:
+         - "{{ target_disk }}"
