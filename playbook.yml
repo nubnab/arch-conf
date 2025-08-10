@@ -2,7 +2,7 @@
   hosts: localhost
   tasks:
    - name: print test
-     ansible.builtin.command: echo "Test"
+     ansible.builtin.shell: echo "Test"
      register: test_output
 
    - name: show test
