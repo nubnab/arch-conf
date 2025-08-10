@@ -36,22 +36,22 @@ else
   ROOT_PART="/dev/${DISK}2"
 fi
 
-mkfs.fat -F 32 /dev/$EFI_PART
-mkfs.btrfs /dev/$ROOT_PART
+mkfs.fat -F 32 $EFI_PART
+mkfs.btrfs $ROOT_PART
 
-mount /dev/$ROOT_PART /mnt
+mount $ROOT_PART /mnt
 
 btrfs subvolume create /mnt/@
 btrfs subvolume create /mnt/@home
 
 umount /mnt
 
-mount -o compress=zstd,subvol=@ /dev/$ROOT_PART /mnt
+mount -o compress=zstd,subvol=@ $ROOT_PART /mnt
 mkdir -p /mnt/home
-mount -o compress=zstd,subvol=@home /dev/$ROOT_PART /mnt/home
+mount -o compress=zstd,subvol=@home $ROOT_PART /mnt/home
 
 mkdir -p /mnt/efi
-mount /dev/$EFI_PART /mnt/efi
+mount $EFI_PART /mnt/efi
 
 pacstrap -K /mnt base base-devel linux linux-firmware git btrfs-progs grub efibootmgr grub-btrfs \
 inotify-tools timeshift amd-ucode networkmanager pipewire pipewire-alsa pipewire-pulse pipewire-jack \
