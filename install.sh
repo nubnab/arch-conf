@@ -19,3 +19,11 @@ timedatectl set-ntp true
 
 #list all unpartitioned disks, needs improvement
 lsblk --json -o NAME,TYPE,FSTYPE,MOUNTPOINT | jq -r '.blockdevices[] | select(.type == "disk" and (.children == null or .children == [])) | .name'
+
+read -p "Enter the disk to partition: " DISK
+
+parted /dev/$DISK --script mklabel gpt
+parted /dev/$DISK --script mkpart primary fat32 1MiB 513MiB
+parted /dev/$DISK --script set 1 esp on
+
+parted /dev/$DISK --script mkpart primary btrfs 513MiB 100%
