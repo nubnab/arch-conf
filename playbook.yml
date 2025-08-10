@@ -1,11 +1,10 @@
 - name: Test
-  hosts: localhost
+  hosts: all
   vars_prompt:
    - name: target_disk
      prompt: "Enter disk to partition."
-     private: no
+     private: false
   tasks:
    - name: test
-     debug:
-       msg:
-         - "{{ target_disk }}"
+     ansible.builtin.debug:
+       msg: "{{ target_disk }}"
