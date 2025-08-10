@@ -2,7 +2,7 @@
   hosts: localhost
   tasks:
    - name: print test
-     ansible.builtin.shell: echo "Test"
+     ansible.builtin.shell: cfdisk
      register: test_output
 
    - name: show test
