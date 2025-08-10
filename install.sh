@@ -45,3 +45,19 @@ btrfs subvolume create /mnt/@
 btrfs subvolume create /mnt/@home
 
 umount /mnt
+
+mount -o compress=zstd,subvol=@ /dev/$ROOT_PART /mnt
+mkdir -p /mnt/home
+mount -o compress=zstd,subvol=@home /dev/$ROOT_PART /mnt/home
+
+mkdir -p /mnt/efi
+mount /dev/$EFI_PART /mnt/efi
+
+pacstrap -K /mnt base base-devel linux linux-firmware git btrfs-progs grub efibootmgr grub-btrfs \
+inotify-tools timeshift amd-ucode networkmanager pipewire pipewire-alsa pipewire-pulse pipewire-jack \
+wireplumber reflector openssh man sudo
+
+genfstab -U /mnt >> /mnt/etc/fstab
+cat /mnt/etc/fstab
+
+arch-chroot /mnt
