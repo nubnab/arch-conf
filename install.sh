@@ -39,7 +39,8 @@ else
 fi
 
 mkfs.fat -F 32 $EFI_PART
-mkfs.btrfs $ROOT_PART
+#investigate -f
+mkfs.btrfs -f $ROOT_PART
 
 mount $ROOT_PART /mnt
 
