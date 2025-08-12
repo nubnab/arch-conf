@@ -61,3 +61,16 @@ genfstab -U /mnt >> /mnt/etc/fstab
 cat /mnt/etc/fstab
 
 arch-chroot /mnt
+
+echo "Set root password: "
+passwd
+
+read -p "Set username: " USERNAME
+
+useradd -m -G wheel -s /bin/bash USERNAME
+
+echo "Set account password: "
+passwd USERNAME
+
+echo "%wheel ALL=(ALL:ALL) ALL" > /etc/sudoers.d/wheel
+chmod 440 /etc/sudoers.d/wheel
