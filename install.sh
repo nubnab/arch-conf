@@ -62,7 +62,7 @@ wireplumber reflector openssh man sudo
 genfstab -U /mnt >> /mnt/etc/fstab
 cat /mnt/etc/fstab
 
-arch-chroot /mnt
+arch-chroot /mnt << 'CHROOT_EOF'
 
 echo "Set root password: "
 passwd
@@ -76,3 +76,6 @@ passwd USERNAME
 
 echo "%wheel ALL=(ALL:ALL) ALL" > /etc/sudoers.d/wheel
 chmod 440 /etc/sudoers.d/wheel
+
+CHROOT_EOF
+
