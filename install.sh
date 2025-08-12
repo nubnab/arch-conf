@@ -22,11 +22,13 @@ lsblk --json -o NAME,TYPE,FSTYPE,MOUNTPOINT | jq -r '.blockdevices[] | select(.t
 
 read -p "Enter the disk to partition: " DISK
 
-parted /dev/$DISK --script mklabel gpt
-parted /dev/$DISK --script mkpart primary fat32 1MiB 513MiB
-parted /dev/$DISK --script set 1 esp on
+DISK_LOC="/dev/${DISK}"
 
-parted /dev/$DISK --script mkpart primary btrfs 513MiB 100%
+parted $DISK_LOC --script mklabel gpt
+parted $DISK_LOC --script mkpart primary fat32 1MiB 513MiB
+parted $DISK_LOC --script set 1 esp on
+
+parted $DISK_LOC --script mkpart primary btrfs 513MiB 100%
 
 if [[ "$DISK" == nvme* ]]; then
   EFI_PART="/dev/${DISK}p1"
