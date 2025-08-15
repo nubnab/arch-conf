@@ -63,7 +63,7 @@ nano wireplumber reflector openssh man sudo
 genfstab -U /mnt >> /mnt/etc/fstab
 cat /mnt/etc/fstab
 
-read -p "Etner your username: " USERNAME
+read -p "Enter your username: " USERNAME
 
 arch-chroot /mnt /bin/bash -c "passwd && useradd -m -G wheel -s /bin/bash ${USERNAME} &&
 sed -i 's/^# %wheel ALL=(ALL:ALL) ALL/%wheel ALL=(ALL:ALL) ALL/' /etc/sudoers &&
