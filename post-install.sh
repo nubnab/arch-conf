@@ -11,3 +11,6 @@ sudo pacman -S --needed base-devel
 git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
 
 yay -S timeshift-autosnap
+
+sudo sed -i 's/^#[multilib]/[multilib]/' /etc/pacman.conf
+sudo sed -i 's/^#Include = /etc/pacman.d/mirrorlist/Include = /etc/pacman.d/mirrorlist/' /etc/pacman.conf
