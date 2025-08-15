@@ -67,7 +67,7 @@ read -p "Enter your username: " USERNAME
 
 arch-chroot /mnt /bin/bash -c "passwd && useradd -m -G wheel -s /bin/bash ${USERNAME} &&
 sed -i 's/^# %wheel ALL=(ALL:ALL) ALL/%wheel ALL=(ALL:ALL) ALL/' /etc/sudoers &&
-grub-install --target=x86_x64-efi --efi-directory/efi --bootloader-id=GRUB &&
+grub-install --target=x86_x64-efi --efi-directory=/efi --bootloader-id=GRUB &&
 grub-mkconfig -o /boot/grub/grub.cfg &&
 systemctl enable NetworkManager"
 
