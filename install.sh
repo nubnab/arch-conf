@@ -73,3 +73,8 @@ grub-install --target=x86_64-efi --efi-directory=/efi --bootloader-id=GRUB &&
 grub-mkconfig -o /boot/grub/grub.cfg &&
 systemctl enable NetworkManager"
 
+cp post-install.sh /mnt/home/$USERNAME
+
+umount -R /mnt
+
+reboot
