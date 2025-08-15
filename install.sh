@@ -58,7 +58,7 @@ mount $EFI_PART /mnt/efi
 
 pacstrap -K /mnt base base-devel linux linux-firmware git btrfs-progs grub efibootmgr grub-btrfs \
 inotify-tools timeshift amd-ucode networkmanager pipewire pipewire-alsa pipewire-pulse pipewire-jack \
-wireplumber reflector openssh man sudo
+nano wireplumber reflector openssh man sudo
 
 genfstab -U /mnt >> /mnt/etc/fstab
 cat /mnt/etc/fstab
