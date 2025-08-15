@@ -1,7 +1,7 @@
 #!/bin/bash
 efi_platform=$(</sys/firmware/efi/fw_platform_size)
 
-pacman -Sy jq ansible
+pacman -Sy jq
 
 set -e
 
