@@ -18,3 +18,5 @@ sudo sed -i 's/^#\[multilib\]/\[multilib\]/' /etc/pacman.conf
 yay -Syu
 
 yay -S nvidia-open-dkms nvidia-utils lib32-nvidia-utils nvidia-settings
+
+sudo mkdir -p /etc/pacman.d/hooks/ && sudo mv ./nvidia.hook /etc/pacman.d/hooks/
