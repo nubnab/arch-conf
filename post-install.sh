@@ -15,3 +15,6 @@ yay -S timeshift-autosnap
 sudo sed -i '/^#\[multilib\]$/{n;s|^#Include = /etc/pacman.d/mirrorlist|Include = /etc/pacman.d/mirrorlist|}' /etc/pacman.conf
 sudo sed -i 's/^#\[multilib\]/\[multilib\]/' /etc/pacman.conf
 
+yay -Syu
+
+yay -S nvidia-open-dkms nvidia-utils lib32-nvidia-utils nvidia-settings
