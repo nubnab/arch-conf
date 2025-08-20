@@ -69,7 +69,7 @@ arch-chroot /mnt /bin/bash -c "passwd &&
 useradd -m -G wheel -s /bin/bash ${USERNAME} &&
 passwd ${USERNAME} &&
 sed -i 's/^# %wheel ALL=(ALL:ALL) ALL/%wheel ALL=(ALL:ALL) ALL/' /etc/sudoers &&
-bootctl install &&
+bootctl --path=/boot install &&
 systemctl enable NetworkManager"
 
 #cp post-install.sh /mnt/home/$USERNAME
