@@ -54,7 +54,7 @@ mkdir -p /mnt/home
 mount -o compress=zstd,subvol=@home $ROOT_PART /mnt/home
 
 mkdir -p /mnt/efi
-mount $EFI_PART /mnt/efi
+mount -o fmask=0137,dmask=0027 $EFI_PART /mnt/efi
 
 pacstrap -K /mnt base base-devel linux linux-firmware git btrfs-progs \
 amd-ucode networkmanager pipewire pipewire-alsa pipewire-pulse pipewire-jack \
