@@ -56,8 +56,8 @@ mount -o compress=zstd,subvol=@home $ROOT_PART /mnt/home
 mkdir -p /mnt/efi
 mount $EFI_PART /mnt/efi
 
-pacstrap -K /mnt base base-devel linux linux-firmware git btrfs-progs grub efibootmgr grub-btrfs \
-inotify-tools timeshift amd-ucode networkmanager pipewire pipewire-alsa pipewire-pulse pipewire-jack \
+pacstrap -K /mnt base base-devel linux linux-firmware git btrfs-progs \
+amd-ucode networkmanager pipewire pipewire-alsa pipewire-pulse pipewire-jack \
 nano wireplumber reflector openssh man sudo
 
 genfstab -U /mnt >> /mnt/etc/fstab
