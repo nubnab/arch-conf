@@ -15,6 +15,7 @@ nc -dzw1 8.8.8.8 443 >/dev/null 2>&1 || {
   exit 1
 }
 
+timedatectl set-timezone Europe/Sofia
 timedatectl set-ntp true
 
 #list all unpartitioned disks, needs improvement
@@ -65,6 +66,7 @@ genfstab -U /mnt >> /mnt/etc/fstab
 cat /mnt/etc/fstab
 
 read -p "Enter your username: " USERNAME
+read -p "Enter your hostname: " HOSTNAME
 
 arch-chroot /mnt /bin/bash -c "
 ln -sf /usr/share/zoneinfo/Europe/Sofia /etc/localtime &&
@@ -73,7 +75,7 @@ sed -i 's/^#en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen &&
 locale-gen &&
 echo \"LANG=en_US.UTF-8\" >> /etc/locale.conf &&
 echo \"KEYMAP=us\" >> /etc/vconsole.conf &&
-echo \"arch\" >> /etc/hostname &&
+echo ${HOSTNAME} >> /etc/hostname &&
 passwd && 
 useradd -m -G wheel -s /bin/bash ${USERNAME} &&
 passwd ${USERNAME} &&
