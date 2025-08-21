@@ -128,6 +128,6 @@ systemctl enable reflector.timer"
 cp nvidia.hook /mnt/home/$USERNAME
 cp post-install.sh /mnt/home/$USERNAME
 
-#umount -R /mnt
+umount -R /mnt
 
-#reboot
+reboot
