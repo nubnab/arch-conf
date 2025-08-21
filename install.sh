@@ -72,8 +72,8 @@ sed -i 's/^# %wheel ALL=(ALL:ALL) ALL/%wheel ALL=(ALL:ALL) ALL/' /etc/sudoers"
 
 #bootctl --path=/boot install (in chroot)
 #systemctl enable NetworkManager (in chroot)
-
-#cp post-install.sh /mnt/home/$USERNAME
+cp nvidia.hook /mnt/home/$USERNAME
+cp post-install.sh /mnt/home/$USERNAME
 
 #umount -R /mnt
 
