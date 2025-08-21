@@ -58,7 +58,23 @@ mount -o compress=zstd,subvol=@home $ROOT_PART /mnt/home
 mkdir -p /mnt/boot
 mount -o fmask=0137,dmask=0027 $EFI_PART /mnt/boot
 
-reflector -c "Bulgaria" -a 12 --sort rate --save /etc/pacman.d/mirrorlist
+max_attempts=5
+attempt_num=0
+
+while [ $attempt_num -lt $max_attempts ]; do
+  if reflector -c "Bulgaria" -a 12 --sort rate --save /etc/pacman.d/mirrorlist; then
+    echo "Reflector succeeded on attempt $((retry_count))"
+    break
+  else
+    echo "Reflector failed on attempt $attempt_num/$max_attempts"
+    attempt_num=$((attempt_num + 1))
+    if [ $attempt_num -eq $max_attempts ]; then
+      echo "Reflector failed after $max_attempts attempts."
+      break
+    fi
+    sleep 2
+  fi
+done
 
 pacstrap -K /mnt base base-devel linux linux-firmware git btrfs-progs \
 amd-ucode networkmanager pipewire pipewire-alsa pipewire-pulse pipewire-jack \
