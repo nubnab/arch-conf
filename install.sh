@@ -100,7 +100,7 @@ title Arch Linux
 linux /vmlinuz-linux  
 initrd amd-ucode.img  
 initrd /initramfs-linux.img  
-options root=/dev/${ROOT_PARTUUID} rw
+options root=PARTUUID=${ROOT_PARTUUID} rootflags=subvol=@ rw
 EOF
 cat << EOF > /boot/loader/loader.conf
 default arch.conf
