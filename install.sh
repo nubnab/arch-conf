@@ -75,6 +75,8 @@ cat > /tmp/hosts.tmp << EOF
 EOF
 
 mv /tmp/hosts.tmp /mnt/etc/hosts
+cp nvidia.hook /mnt/home/$USERNAME
+cp post-install.sh /mnt/home/$USERNAME
 
 arch-chroot /mnt /bin/bash -c "
 ln -sf /usr/share/zoneinfo/Europe/Sofia /etc/localtime &&
@@ -88,12 +90,10 @@ passwd &&
 useradd -m -G wheel -s /bin/bash ${USERNAME} &&
 passwd ${USERNAME} &&
 sed -i 's/^# %wheel ALL=(ALL:ALL) ALL/%wheel ALL=(ALL:ALL) ALL/' /etc/sudoers &&
+sed -i 's/^\(HOOKS=(.*\)block filesystems\(.*)\)/\1block btrfs filesystems\2/' /etc/mkinitcpio.conf &&
+mkinitcpio -p linux &&
 bootctl --path=/boot install &&
 systemctl enable NetworkManager"
-
-
-cp nvidia.hook /mnt/home/$USERNAME
-cp post-install.sh /mnt/home/$USERNAME
 
 #umount -R /mnt
 
