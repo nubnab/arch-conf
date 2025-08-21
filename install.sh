@@ -42,6 +42,8 @@ fi
 mkfs.fat -F 32 $EFI_PART
 mkfs.btrfs -f $ROOT_PART
 
+ROOT_PARTUUID=$(blkid -s PARTUUID -o value "$ROOT_PART")
+
 mount $ROOT_PART /mnt
 
 btrfs subvolume create /mnt/@
@@ -93,6 +95,19 @@ sed -i 's/^# %wheel ALL=(ALL:ALL) ALL/%wheel ALL=(ALL:ALL) ALL/' /etc/sudoers &&
 sed -i 's/^\(HOOKS=(.*\)block filesystems\(.*)\)/\1block btrfs filesystems\2/' /etc/mkinitcpio.conf &&
 mkinitcpio -p linux &&
 bootctl --path=/boot install &&
+cat << EOF > /boot/loader/entries/arch.conf
+title Arch Linux
+linux /vmlinuz-linux  
+initrd amd-ucode.img  
+initrd /initramfs-linux.img  
+options root=/dev/${ROOT_PARTUUID} rw
+EOF
+cat << EOF > /boot/loader/loader.conf
+default arch.conf
+timeout 10
+console-mode max
+editor no
+EOF
 systemctl enable NetworkManager
 systemctl enable reflector.timer"
 
