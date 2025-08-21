@@ -93,7 +93,8 @@ sed -i 's/^# %wheel ALL=(ALL:ALL) ALL/%wheel ALL=(ALL:ALL) ALL/' /etc/sudoers &&
 sed -i 's/^\(HOOKS=(.*\)block filesystems\(.*)\)/\1block btrfs filesystems\2/' /etc/mkinitcpio.conf &&
 mkinitcpio -p linux &&
 bootctl --path=/boot install &&
-systemctl enable NetworkManager"
+systemctl enable NetworkManager
+systemctl enable reflector.timer"
 
 #umount -R /mnt
 
