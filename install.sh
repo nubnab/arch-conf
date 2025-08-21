@@ -77,8 +77,6 @@ cat > /tmp/hosts.tmp << EOF
 EOF
 
 mv /tmp/hosts.tmp /mnt/etc/hosts
-cp nvidia.hook /mnt/home/$USERNAME
-cp post-install.sh /mnt/home/$USERNAME
 
 arch-chroot /mnt /bin/bash -c "
 ln -sf /usr/share/zoneinfo/Europe/Sofia /etc/localtime &&
@@ -110,6 +108,9 @@ editor no
 EOF
 systemctl enable NetworkManager
 systemctl enable reflector.timer"
+
+cp nvidia.hook /mnt/home/$USERNAME
+cp post-install.sh /mnt/home/$USERNAME
 
 #umount -R /mnt
 
