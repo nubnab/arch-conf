@@ -68,6 +68,14 @@ cat /mnt/etc/fstab
 read -p "Enter your username: " USERNAME
 read -p "Enter your hostname: " HOSTNAME
 
+cat > /tmp/hosts.tmp << EOF
+127.0.0.1   localhost
+::1         localhost
+127.0.1.1   $HOSTNAME.localdomain $HOSTNAME
+EOF
+
+mv /tmp/hosts.tmp /mnt/etc/hosts
+
 arch-chroot /mnt /bin/bash -c "
 ln -sf /usr/share/zoneinfo/Europe/Sofia /etc/localtime &&
 hwclock --systohc &&
