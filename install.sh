@@ -65,7 +65,10 @@ cat /mnt/etc/fstab
 
 read -p "Enter your username: " USERNAME
 
-arch-chroot /mnt /bin/bash -c "passwd && 
+arch-chroot /mnt /bin/bash -c "
+ln -sf /usr/share/zoneinfo/Europe/Sofia /etc/localtime &&
+hwclock --systohc &&
+passwd && 
 useradd -m -G wheel -s /bin/bash ${USERNAME} &&
 passwd ${USERNAME} &&
 sed -i 's/^# %wheel ALL=(ALL:ALL) ALL/%wheel ALL=(ALL:ALL) ALL/' /etc/sudoers"
