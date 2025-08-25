@@ -2,6 +2,8 @@
 
 timedatectl set-ntp true
 
+sudo pacman -Sy
+
 git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
 
 sudo sed -i '/^#\[multilib\]$/{n;s|^#Include = /etc/pacman.d/mirrorlist|Include = /etc/pacman.d/mirrorlist|}' /etc/pacman.conf
