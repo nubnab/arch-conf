@@ -62,7 +62,7 @@ max_attempts=5
 attempt_num=0
 
 while [ $attempt_num -lt $max_attempts ]; do
-  if reflector -c "Bulgaria" -a 12 --sort rate --save /etc/pacman.d/mirrorlist; then
+  if reflector --latest 30 --sort rate --save /etc/pacman.d/mirrorlist; then
     echo "Reflector succeeded on attempt $((attempt_num))"
     break
   else
