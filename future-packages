@@ -1,0 +1,48 @@
+wget
+unzip
+rofi-wayland
+dunst
+sww
+hyprlock
+hypridle
+kitty / alactritty
+starship
+picom -> screen tearing
+qt5-wayland
+qt6-wayland
+cliphist
+thunar-volman
+thunar-archive-plugin
+ark
+gvfs
+tumbler
+network-manager-applet
+blueman(?)
+brightnessctl
+slurp
+grim
+xclip
+swappy
+ttf-font-awesome
+otf-font-awesome
+ttf-fira-sans
+ttf-fira-code
+ttf-firacode-nerd
+gnome-themes-extra
+gtk-engine-murrine
+nwg-look
+--noconfirm
+
+yay
+wlogout
+waypaper
+hyprland-qtutils
+qogir-gtk-theme
+qogir-icon-theme
+--noconfirm
+
+pacman (image viewer, gwenview?, feh?)
+okular for pdf? libreoffice yazi fastfetcj btop++?
+
+unset BROWSER
+xdg-settings set default-web-browser firefox.desktop
