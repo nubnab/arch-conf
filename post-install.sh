@@ -20,10 +20,9 @@ sudo mv nvidia.hook /etc/pacman.d/hooks/
 #hyprlock
 #hypridle
 #starship
-#picom -> screen tearing
+#steam
 #network-manager-applet
 #blueman(?) bluez / bluez-utils
-#xclip unecessary
 #gnome-themes-extra
 #gtk-engine-murrine
 
@@ -41,6 +40,7 @@ yay -S waypaper hyprland-qtutils vesktop --noconfirm
 #gamemode
 #proton
 #wine
+#intellij-toolbox
 
 sudo mkinitcpio -P
 
