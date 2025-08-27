@@ -17,7 +17,6 @@ sed -i '/^HOOKS=/ s|modconf kms keyboard|modconf keyboard|' /etc/mkinitcpio.conf
 mkdir -p /etc/pacman.d/hooks/ 
 mv nvidia.hook /etc/pacman.d/hooks/
 
-
 #hyprlock
 #hypridle
 #starship
@@ -28,7 +27,7 @@ mv nvidia.hook /etc/pacman.d/hooks/
 #gnome-themes-extra
 #gtk-engine-murrine
 
-pacman -Sy vim fastfetch kitty thunar sddm waybar xdg-desktop-portal-hyprland hyprland \
+pacman -Sy linux-headers vim fastfetch kitty thunar sddm waybar xdg-desktop-portal-hyprland hyprland \
            firefox wget unzip rofi-wayland dunst swww qt5-wayland qt6-wayland cliphist \
            thunar-volman thunar-archive-plugin ark gvfs tumbler brightnessctl slurp \
            grim swappy ttf-font-awesome otf-font-awesome ttf-fira-sans ttf-fira-code \
@@ -42,5 +41,7 @@ yay -S waypaper hyprland-qtutils --noconfirm
 #gamemode
 #proton
 #wine
+
+mkinitcpio -P
 
 systemctl enable sddm.service
