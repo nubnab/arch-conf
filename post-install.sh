@@ -1,7 +1,5 @@
 #!/bin/bash
 
-timedatectl set-ntp true
-
 sudo pacman -Sy
 
 git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
