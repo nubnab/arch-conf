@@ -34,7 +34,7 @@ pacman -Sy linux-headers vim fastfetch kitty thunar sddm waybar xdg-desktop-port
            ttf-firacode-nerd noto-fonts-cjk nwg-look --noconfirm
 
 
-yay -S waypaper hyprland-qtutils --noconfirm
+yay -S waypaper hyprland-qtutils vesktop --noconfirm
 #qogir-gtk-theme
 #qogir-icon-theme
 #wlogout
