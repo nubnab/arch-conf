@@ -20,7 +20,7 @@ sudo mv nvidia.hook /etc/pacman.d/hooks/
 #hyprlock
 #hypridle
 #starship
-#steam
+#steam (+fix for downloads)
 #network-manager-applet
 #blueman(?) bluez / bluez-utils
 #gnome-themes-extra
