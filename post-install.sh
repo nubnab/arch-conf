@@ -41,6 +41,7 @@ yay -S waypaper hyprland-qtutils vesktop --noconfirm
 #proton
 #wine
 #intellij-toolbox
+#qimgv (img viewer)
 
 sudo mkinitcpio -P
 
