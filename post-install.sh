@@ -17,11 +17,7 @@ sed -i '/^HOOKS=/ s|modconf kms keyboard|modconf keyboard|' /etc/mkinitcpio.conf
 mkdir -p /etc/pacman.d/hooks/ 
 mv nvidia.hook /etc/pacman.d/hooks/
 
-pacman -Sy vim fastfetch kitty thunar sddm waybar xdg-desktop-portal-hyprland hyprland \
-           firefox wget unzip rofi-wayland dunst swww qt5-wayland qt6-wayland cliphist \
-           thunar-volman thunar-archive-plugin ark gvfs tumbler brightnessctl slurp \
-           grim swappy ttf-font-awesome otf-font-awesome ttf-fira-sans ttf-fira-code \
-           ttf-firacode-nerd noto-fonts-cjk nwg-look --noconfirm
+
 #hyprlock
 #hypridle
 #starship
@@ -31,4 +27,20 @@ pacman -Sy vim fastfetch kitty thunar sddm waybar xdg-desktop-portal-hyprland hy
 #xclip unecessary
 #gnome-themes-extra
 #gtk-engine-murrine
+
+pacman -Sy vim fastfetch kitty thunar sddm waybar xdg-desktop-portal-hyprland hyprland \
+           firefox wget unzip rofi-wayland dunst swww qt5-wayland qt6-wayland cliphist \
+           thunar-volman thunar-archive-plugin ark gvfs tumbler brightnessctl slurp \
+           grim swappy ttf-font-awesome otf-font-awesome ttf-fira-sans ttf-fira-code \
+           ttf-firacode-nerd noto-fonts-cjk nwg-look --noconfirm
+
+
+yay -S waypaper hyprland-qtutils --noconfirm
+#qogir-gtk-theme
+#qogir-icon-theme
+#wlogout
+#gamemode
+#proton
+#wine
+
 systemctl enable sddm.service
