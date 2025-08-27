@@ -7,7 +7,7 @@ hyprlock
 hypridle
 kitty
 starship
-picom -> screen tearing
+picom -> screen tearing | not needed for hyprland wayland
 qt5-wayland
 qt6-wayland
 cliphist
@@ -21,7 +21,7 @@ blueman(?)
 brightnessctl
 slurp
 grim
-xclip
+xclip | not needed 
 swappy
 ttf-font-awesome
 otf-font-awesome
@@ -50,3 +50,5 @@ okular for pdf? libreoffice yazi fastfetcj btop++?
 
 unset BROWSER
 xdg-settings set default-web-browser firefox.desktop
+
+https://docs.xfce.org/xfce/thunar/custom-actions
