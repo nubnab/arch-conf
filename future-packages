@@ -40,6 +40,9 @@ waypaper
 hyprland-qtutils
 qogir-gtk-theme
 qogir-icon-theme
+gamemode
+proton
+wine
 --noconfirm
 
 pacman (image viewer, gwenview?, feh?)
