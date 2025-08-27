@@ -1,6 +1,6 @@
 [Desltop Entry]
 Name=Neovim
-Exec=alacritty -e nvim %F
+Exec=kitty -e nvim %F
 Terminal=false
 Type=Application
 Keywords=Text;editor;
