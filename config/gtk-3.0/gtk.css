@@ -1,0 +1,17 @@
+window.thunar * {
+	background-color: transparent;
+	background-image:none
+}
+
+window.thunar, window.thunar decoration {
+	background-color: rgba(22,23,24, 0.8);
+}
+
+
+window.thunar treeview *:hover, window.thunar treeview *:selected, window.thunar button:hover {
+	background-color: rgba(220,230,240, 0.1);
+}
+
+window.thunar widget:hover {
+	background-color: rgba(220,230,240, 0.2);
+}
