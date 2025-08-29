@@ -28,7 +28,7 @@ sudo mv nvidia.hook /etc/pacman.d/hooks/
 
 sudo pacman -Sy linux-headers vim fastfetch kitty thunar sddm waybar xdg-desktop-portal-hyprland hyprland \
            polkit-gnome firefox wget unzip rofi-wayland swaync swww qt5-wayland qt6-wayland cliphist \
-           thunar-volman thunar-archive-plugin ark gvfs tumbler brightnessctl slurp \
+           thunar-volman thunar-archive-plugin ark unrar gvfs tumbler brightnessctl slurp \
            grim swappy ttf-font-awesome otf-font-awesome ttf-fira-sans ttf-fira-code \
            ttf-firacode-nerd noto-fonts-cjk nwg-look --noconfirm
 
