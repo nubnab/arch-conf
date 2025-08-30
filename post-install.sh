@@ -28,4 +28,6 @@ yay -S waypaper hyprland-qtutils vesktop gimgv intellij-toolbox wlogout qogir-gt
 
 sudo mkinitcpio -P
 
+sudo usermod -aG gamemode $USER
+
 sudo systemctl enable sddm.service
