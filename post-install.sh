@@ -25,7 +25,8 @@ sudo pacman -Sy linux-headers vim fastfetch kitty thunar sddm waybar xdg-desktop
                 yazi btop nvtop ttf-font-awesome otf-font-awesome ttf-fira-sans ttf-fira-code \
                 ttf-firacode-nerd noto-fonts-cjk --noconfirm
 
-yay -S waypaper hyprland-qtutils vesktop gimgv intellij-toolbox wlogout qogir-gtk-theme qogir-icon-theme --noconfirm
+yay -S waypaper hyprland-qtutils vesktop gimgv intellij-toolbox wlogout qogir-gtk-theme qogir-icon-theme \
+       github-desktop --noconfirm
 
 sudo mkinitcpio -P
 
