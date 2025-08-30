@@ -37,5 +37,5 @@ sudo ninja -C build install
 sudo systemctl enable sddm.service
 #network manager
 
-cp -rf config/. ~/.config/
-cp -rf local/. ~/.local/
+cp -rf "$base_dir/config/." ~/.config/
+cp -rf "$base_dir/local/." ~/.local/
