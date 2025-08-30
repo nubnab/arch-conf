@@ -2,6 +2,8 @@
 
 sudo pacman -Sy
 
+base_dir=$(pwd)
+
 git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
 
 sudo sed -i '/^#\[multilib\]$/{n;s|^#Include = /etc/pacman.d/mirrorlist|Include = /etc/pacman.d/mirrorlist|}' /etc/pacman.conf
@@ -10,7 +12,7 @@ sudo sed -i 's/^#\[multilib\]/\[multilib\]/' /etc/pacman.conf
 yay -Sy
 
 sudo mkdir -p /etc/pacman.d/hooks/ 
-sudo mv nvidia.hook /etc/pacman.d/hooks/
+sudo cp "$base_dir/nvidia.hook" /etc/pacman.d/hooks/
 
 sudo pacman -Sy linux-headers vim fastfetch kitty thunar sddm waybar xdg-desktop-portal-hyprland hyprland \
                 polkit-gnome firefox wget unzip rofi-wayland swaync swww qt5-wayland qt6-wayland cliphist \
@@ -33,7 +35,7 @@ sudo mkinitcpio -P
 
 sudo usermod -aG gamemode $USER
 
-git clone https://github.com/radiolamp/mangojuice.git && cd mangojuice
+cd ~ && git clone https://github.com/radiolamp/mangojuice.git && cd mangojuice
 meson setup build
 sudo ninja -C build install
 
