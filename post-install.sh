@@ -4,7 +4,7 @@ sudo pacman -Sy
 
 base_dir=$(pwd)
 
-cd "$base_dir" && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
+cd ~ && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
 
 sudo sed -i '/^#\[multilib\]$/{n;s|^#Include = /etc/pacman.d/mirrorlist|Include = /etc/pacman.d/mirrorlist|}' /etc/pacman.conf
 sudo sed -i 's/^#\[multilib\]/\[multilib\]/' /etc/pacman.conf
