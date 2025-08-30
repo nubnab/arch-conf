@@ -16,8 +16,8 @@ sudo pacman -Sy linux-headers vim fastfetch kitty thunar sddm waybar xdg-desktop
                 thunar-volman thunar-archive-plugin ark unrar gvfs tumbler brightnessctl slurp nwg-look \
                 network-manager-applet grim swappy gnome-themes-extra gtk-engine-murrine steam starship \
                 mangohud lib32-mangohud bluez bluez-utils hyprlock hypridle gamemode vala lib32-gamemode \
-                yazi btop nvtop vulkan-tools mesa-utils qbittorrent ttf-font-awesome otf-font-awesome \
-                ttf-fira-sans ttf-fira-code ttf-firacode-nerd noto-fonts-cjk --noconfirm
+                yazi btop nvtop vulkan-tools mesa-utils qbittorrent gtk-engines ttf-font-awesome \
+                otf-font-awesome ttf-fira-sans ttf-fira-code ttf-firacode-nerd noto-fonts-cjk --noconfirm
 
 yay -S hyprland-qtutils nvidia-open-dkms nvidia-utils lib32-nvidia-utils nvidia-settings \
        waypaper vesktop qimgv jetbrains-toolbox wlogout github-desktop-bin --noconfirm
@@ -41,5 +41,11 @@ sudo ninja -C build install
 sudo systemctl enable sddm.service
 #network manager
 
-cp -rf "$base_dir/config/." ~/.config/
-cp -rf "$base_dir/local/." ~/.local/
+cd "$base_dir"
+cp -rf "config/." ~/.config/
+cp -rf "local/." ~/.local/
+
+git clone https://github.com/vinceliuice/Qogir-theme && sh ./Qogir-theme/install.sh -c dark
+git clone https://github.com/vinceliuice/Qogir-icon-theme && sh ./Qogir-theme/install.sh -c dark
+
+cd ~ && rm -rf "$base_dir"
