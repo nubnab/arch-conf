@@ -28,6 +28,8 @@ sudo pacman -Sy linux-headers vim fastfetch kitty thunar sddm waybar xdg-desktop
 yay -S waypaper hyprland-qtutils vesktop gimgv intellij-toolbox wlogout qogir-gtk-theme qogir-icon-theme \
        github-desktop --noconfirm
 
+cp -rf config/. ~/.config/
+
 sudo mkinitcpio -P
 
 sudo usermod -aG gamemode $USER
