@@ -22,7 +22,7 @@ sudo pacman -Sy linux-headers vim fastfetch kitty thunar sddm waybar xdg-desktop
                 polkit-gnome firefox wget unzip rofi-wayland swaync swww qt5-wayland qt6-wayland cliphist \
                 thunar-volman thunar-archive-plugin ark unrar gvfs tumbler brightnessctl slurp nwg-look \
                 network-manger-applet grim swappy gnome-themes-extra gtk-engine-murrine steam starship \
-                bluez bluez-utils hyprlock hypridle gamemode lib32-gamemode ttf-font-awesome \
+                bluez bluez-utils hyprlock hypridle gamemode vala lib32-gamemode ttf-font-awesome \
                 otf-font-awesome ttf-fira-sans ttf-fira-code ttf-firacode-nerd noto-fonts-cjk --noconfirm
 
 yay -S waypaper hyprland-qtutils vesktop gimgv intellij-toolbox wlogout qogir-gtk-theme qogir-icon-theme --noconfirm
@@ -30,5 +30,9 @@ yay -S waypaper hyprland-qtutils vesktop gimgv intellij-toolbox wlogout qogir-gt
 sudo mkinitcpio -P
 
 sudo usermod -aG gamemode $USER
+
+git clone https://github.com/radiolamp/mangojuice.git && cd mangojuice
+meson setup build
+sudo ninja -C build install
 
 sudo systemctl enable sddm.service
