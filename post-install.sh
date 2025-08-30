@@ -20,9 +20,9 @@ sudo pacman -Sy linux-headers vim fastfetch kitty thunar sddm waybar xdg-desktop
                 yazi btop nvtop vulkan-tools mesa-utils ttf-font-awesome otf-font-awesome ttf-fira-sans \
                 ttf-fira-code ttf-firacode-nerd noto-fonts-cjk --noconfirm
 
-yay -S waypaper hyprland-qtutils vesktop qimgv intellij-toolbox wlogout qogir-gtk-theme qogir-icon-theme \
-       github-desktop nvidia-open-dkms nvidia-utils lib32-nvidia-utils nvidia-settings --noconfirm
-
+yay -S hyprland-qtutils nvidia-open-dkms nvidia-utils lib32-nvidia-utils nvidia-settings --noconfirm
+yay -S waypaper vesktop qimgv jetbrains-toolbox wlogout qogir-gtk-theme qogir-icon-theme github-desktop --noconfirm
+    
 sudo sed -i 's|^MODULES=()|MODULES=(nvidia nvidia_modeset nvidia_uvm nvidia_drm)|' /etc/mkinitcpio.conf
 sudo sed -i '/^HOOKS=/ s|modconf kms keyboard|modconf keyboard|' /etc/mkinitcpio.conf
 
