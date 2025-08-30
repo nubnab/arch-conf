@@ -118,7 +118,7 @@ options root=PARTUUID=${ROOT_PARTUUID} rootflags=subvol=@ rw
 EOF
 cat << EOF > /boot/loader/loader.conf
 default arch.conf
-timeout 10
+timeout 3
 console-mode max
 editor yes
 EOF
