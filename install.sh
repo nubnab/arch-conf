@@ -125,11 +125,6 @@ EOF
 systemctl enable NetworkManager
 systemctl enable reflector.timer"
 
-cp -r config /mnt/home/$USERNAME
-cp -r local /mnt/home/$USERNAME
-cp nvidia.hook /mnt/home/$USERNAME
-cp post-install.sh /mnt/home/$USERNAME
-
 umount -R /mnt
 
 reboot
