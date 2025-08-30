@@ -1,4 +1,4 @@
-[Desltop Entry]
+[Desktop Entry]
 Name=Neovim
 Exec=kitty -e nvim %F
 Terminal=false
