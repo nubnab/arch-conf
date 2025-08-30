@@ -45,5 +45,3 @@ cp -rf "local/." ~/.local/
 
 git clone https://github.com/vinceliuice/Qogir-theme && sh ./Qogir-theme/install.sh -c dark
 git clone https://github.com/vinceliuice/Qogir-icon-theme && sh ./Qogir-icon-theme/install.sh -c dark
-
-cd ~ && rm -rf "$base_dir"
