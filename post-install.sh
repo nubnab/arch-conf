@@ -9,8 +9,6 @@ git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
 sudo sed -i '/^#\[multilib\]$/{n;s|^#Include = /etc/pacman.d/mirrorlist|Include = /etc/pacman.d/mirrorlist|}' /etc/pacman.conf
 sudo sed -i 's/^#\[multilib\]/\[multilib\]/' /etc/pacman.conf
 
-yay -Sy
-
 sudo mkdir -p /etc/pacman.d/hooks/ 
 sudo cp "$base_dir/nvidia.hook" /etc/pacman.d/hooks/
 
@@ -28,9 +26,6 @@ yay -S waypaper hyprland-qtutils vesktop qimgv intellij-toolbox wlogout qogir-gt
 sudo sed -i 's|^MODULES=()|MODULES=(nvidia nvidia_modeset nvidia_uvm nvidia_drm)|' /etc/mkinitcpio.conf
 sudo sed -i '/^HOOKS=/ s|modconf kms keyboard|modconf keyboard|' /etc/mkinitcpio.conf
 
-cp -rf config/. ~/.config/
-cp -rf local/. ~/.local/
-
 sudo mkinitcpio -P
 
 sudo usermod -aG gamemode $USER
@@ -40,3 +35,7 @@ meson setup build
 sudo ninja -C build install
 
 sudo systemctl enable sddm.service
+#network manager
+
+cp -rf config/. ~/.config/
+cp -rf local/. ~/.local/
