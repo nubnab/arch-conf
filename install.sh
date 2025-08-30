@@ -78,7 +78,7 @@ done
 
 pacstrap -K /mnt base base-devel linux linux-firmware git btrfs-progs \
 amd-ucode networkmanager pipewire pipewire-alsa pipewire-pulse pipewire-jack \
-nano wireplumber reflector openssh man sudo
+nano wireplumber reflector rsync openssh man man-pages sudo
 
 genfstab -U /mnt >> /mnt/etc/fstab
 cat /mnt/etc/fstab
