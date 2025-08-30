@@ -16,8 +16,8 @@ sudo pacman -Sy linux-headers vim fastfetch kitty thunar sddm waybar xdg-desktop
                 thunar-volman thunar-archive-plugin ark unrar gvfs tumbler brightnessctl slurp nwg-look \
                 network-manager-applet grim swappy gnome-themes-extra gtk-engine-murrine steam starship \
                 mangohud lib32-mangohud bluez bluez-utils hyprlock hypridle gamemode vala lib32-gamemode 
-                neovim yazi btop nvtop vulkan-tools mesa-utils qbittorrent gtk-engines ttf-font-awesome \
-                otf-font-awesome ttf-fira-sans ttf-fira-code ttf-firacode-nerd noto-fonts-cjk --noconfirm
+                neovim yazi btop nvtop vulkan-tools mesa-utils qbittorrent gtk-engines neovide \
+                ttf-font-awesome otf-font-awesome ttf-fira-sans ttf-fira-code ttf-firacode-nerd noto-fonts-cjk --noconfirm
 
 yay -S hyprland-qtutils nvidia-open-dkms nvidia-utils lib32-nvidia-utils nvidia-settings \
        waypaper vesktop qimgv jetbrains-toolbox wlogout github-desktop-bin --noconfirm
