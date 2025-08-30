@@ -22,7 +22,8 @@ sudo pacman -Sy linux-headers vim fastfetch kitty thunar sddm waybar xdg-desktop
                 thunar-volman thunar-archive-plugin ark unrar gvfs tumbler brightnessctl slurp nwg-look \
                 network-manger-applet grim swappy gnome-themes-extra gtk-engine-murrine steam starship \
                 mangohud lib32-mangohud bluez bluez-utils hyprlock hypridle gamemode vala lib32-gamemode \
-                ttf-font-awesome otf-font-awesome ttf-fira-sans ttf-fira-code ttf-firacode-nerd noto-fonts-cjk --noconfirm
+                yazi btop nvtop ttf-font-awesome otf-font-awesome ttf-fira-sans ttf-fira-code \
+                ttf-firacode-nerd noto-fonts-cjk --noconfirm
 
 yay -S waypaper hyprland-qtutils vesktop gimgv intellij-toolbox wlogout qogir-gtk-theme qogir-icon-theme --noconfirm
 
