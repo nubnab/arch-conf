@@ -29,6 +29,7 @@ yay -S waypaper hyprland-qtutils vesktop gimgv intellij-toolbox wlogout qogir-gt
        github-desktop --noconfirm
 
 cp -rf config/. ~/.config/
+cp -rf local/. ~/.local/
 
 sudo mkinitcpio -P
 
