@@ -78,7 +78,7 @@ done
 
 pacstrap -K /mnt base base-devel linux linux-firmware git btrfs-progs \
 amd-ucode networkmanager pipewire pipewire-alsa pipewire-pulse pipewire-jack \
-nano wireplumber reflector rsync openssh man man-pages sudo
+nano vim wireplumber reflector rsync openssh man man-pages sudo
 
 genfstab -U /mnt >> /mnt/etc/fstab
 cat /mnt/etc/fstab
@@ -125,6 +125,8 @@ EOF
 systemctl enable NetworkManager
 systemctl enable reflector.timer"
 
+cp -r config /mnt/home/$USERNAME
+cp -r local /mnt/home/$USERNAME
 cp nvidia.hook /mnt/home/$USERNAME
 cp post-install.sh /mnt/home/$USERNAME
 
