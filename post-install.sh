@@ -17,20 +17,14 @@ sudo sed -i '/^HOOKS=/ s|modconf kms keyboard|modconf keyboard|' /etc/mkinitcpio
 sudo mkdir -p /etc/pacman.d/hooks/ 
 sudo mv nvidia.hook /etc/pacman.d/hooks/
 
-#hyprlock
-#hypridle
-
 sudo pacman -Sy linux-headers vim fastfetch kitty thunar sddm waybar xdg-desktop-portal-hyprland hyprland \
                 polkit-gnome firefox wget unzip rofi-wayland swaync swww qt5-wayland qt6-wayland cliphist \
                 thunar-volman thunar-archive-plugin ark unrar gvfs tumbler brightnessctl slurp nwg-look \
                 network-manger-applet grim swappy gnome-themes-extra gtk-engine-murrine steam starship \
-                bluez bluez-utils ttf-font-awesome otf-font-awesome ttf-fira-sans ttf-fira-code \
-                ttf-firacode-nerd noto-fonts-cjk --noconfirm
+                bluez bluez-utils hyprlock hypridle gamemode lib32-gamemode ttf-font-awesome \
+                otf-font-awesome ttf-fira-sans ttf-fira-code ttf-firacode-nerd noto-fonts-cjk --noconfirm
 
-
-yay -S waypaper hyprland-qtutils vesktop gimgv intellij-toolbox qogir-gtk-theme qogir-icon-theme --noconfirm
-#wlogout
-#gamemode
+yay -S waypaper hyprland-qtutils vesktop gimgv intellij-toolbox wlogout qogir-gtk-theme qogir-icon-theme --noconfirm
 
 sudo mkinitcpio -P
 
