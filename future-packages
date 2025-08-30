@@ -1,52 +1,7 @@
-wget
-unzip
-rofi-wayland
-dunst
-sww
-hyprlock
-hypridle
-kitty
 starship
-picom -> screen tearing | not needed for hyprland wayland
-qt5-wayland
-qt6-wayland
-cliphist
-thunar-volman
-thunar-archive-plugin
-ark
-gvfs
-tumbler
-network-manager-applet
-blueman(?)
-brightnessctl
-slurp
-grim
 xclip | not needed 
-swappy
-ttf-font-awesome
-otf-font-awesome
-ttf-fira-sans
-ttf-fira-code
-ttf-firacode-nerd
-noto-fonts-cjk
-gnome-themes-extra
-gtk-engine-murrine
-nwg-look
---noconfirm
 
-yay
-wlogout
-waypaper
-hyprland-qtutils
-qogir-gtk-theme
-qogir-icon-theme
-gamemode
-proton
-wine
---noconfirm
-
-pacman (image viewer, gwenview?, feh?)
-okular for pdf? libreoffice yazi fastfetcj btop++?
+okular for pdf? libreoffice
 
 unset BROWSER
 xdg-settings set default-web-browser firefox.desktop
