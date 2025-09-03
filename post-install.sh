@@ -11,7 +11,7 @@ sudo sed -i 's/^#\[multilib\]/\[multilib\]/' /etc/pacman.conf
 
 yay -Sy
 
-sudo pacman -Sy linux-headers vim fastfetch kitty thunar sddm waybar xdg-desktop-portal-hyprland hyprland \
+sudo pacman -S  linux-headers vim fastfetch kitty thunar sddm waybar xdg-desktop-portal-hyprland hyprland \
                 polkit-gnome firefox wget unzip rofi-wayland swaync swww qt5-wayland qt6-wayland cliphist \
                 thunar-volman thunar-archive-plugin unrar gvfs tumbler brightnessctl slurp nwg-look \
                 network-manager-applet grim swappy gnome-themes-extra gtk-engine-murrine steam starship \
